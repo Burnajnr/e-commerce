@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basto Luxury & Wears - Checkout</title>
+  <link rel="stylesheet" href="Style/checkout.css">
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() { emailjs.init("Hz6gaYk-FG-XzXUoq"); })();
+  </script>
+
+  <style>
+    /* Black Back to Home Button */
+    .back-home-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: black;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 9999;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+      transition: 0.3s ease;
+    }
+    .back-home-btn:hover { transform: scale(1.05); background: #222; }
+
+    /* Contact Seller Button */
+    .contact-seller-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 25px;
+      background: linear-gradient(90deg, #ff0077, #ff55aa);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+    .contact-seller-btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(90deg, #ff3399, #ff77bb);
+    }
+
+    /* Contact Seller Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn { from {opacity:0; transform:scale(0.9);} to {opacity:1; transform:scale(1);} }
+    .modal input, .modal textarea { width:100%; padding:12px; margin:10px 0; border:none; border-radius:10px; outline:none; font-size:14px; color:black; }
+    .modal button {
+      background: linear-gradient(90deg,#ff0077,#ff55aa);
+      border:none; padding:12px; width:100%; border-radius:10px; color:white; font-weight:bold; cursor:pointer; transition:0.3s;
+    }
+    .modal button:hover { background: linear-gradient(90deg,#ff3399,#ff77bb); }
+    .close-modal { position:absolute; top:20px; right:30px; font-size:28px; color:white; cursor:pointer; transition:0.3s; }
+    .close-modal:hover { color:#ff77bb; }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Home -->
+  <a href="index.html" class="back-home-btn">
+    <ion-icon name="arrow-back-outline"></ion-icon> Home
+  </a>
+
+  <div class="payment-glass">
+    <h3>Choose Payment Method</h3>
+    <div class="payment-options">
+      <label>
+        <input type="radio" name="payment" value="bank" checked>
+        <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
+        Bank Transfer
+      </label>
+    </div>
+
+    <div id="bank-details" class="payment-details">
+      <h4>Choose Bank to Transfer To:</h4>
+      <select id="bank-select">
+        <option value="Bank of Commerce - 1234567890">Bank of Commerce - 1234567890</option>
+        <option value="Global Trust Bank - 9876543210">Global Trust Bank - 9876543210</option>
+        <option value="Unity Bank - 1122334455">Unity Bank - 1122334455</option>
+      </select>
+
+      <input type="text" id="customer-name" placeholder="Your Full Name" required>
+      <input type="email" id="customer-email" placeholder="Your Email" required>
+
+      <label for="receipt-upload" class="receipt-label">
+        Upload Payment Receipt:
+        <input type="file" id="receipt-upload" accept="image/*,application/pdf" required>
+      </label>
+      <span id="receipt-status"></span>
+      <p>Please transfer the total amount to the selected account and upload your payment receipt.</p>
+    </div>
+
+    <button id="pay-btn" class="glass-btn">Pay Now</button>
+  </div>
+
+  <div id="order-confirmation" style="display:none;" class="order-confirmation-glass">
+    <h2>Thank you!</h2>
+    <p>Your order has been received and is being processed.</p>
+    <button class="contact-seller-btn" id="openModal">
+      <ion-icon name="chatbubbles-outline"></ion-icon> Contact Seller
+    </button>
+  </div>
+
+  <!-- Contact Seller Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <h3>Contact Seller</h3>
+      <input type="text" id="sellerName" placeholder="Your Name" required>
+      <input type="email" id="sellerEmail" placeholder="Your Email" required>
+      <textarea id="sellerMessage" rows="4" placeholder="Type your message..."></textarea>
+      <button id="sendMessage">Send via WhatsApp</button>
+    </div>
+  </div>
+
+  <div id="guest-note" style="display:block; padding:8px; background:#fff3cd; border:1px solid #ffeeba;">
+    You can complete checkout as a guest. Sign in for faster checkout and order history.
+  </div>
+
+  <script>
+    // Contact Seller Modal
+    const modal = document.getElementById('contactModal');
+    document.getElementById('openModal').onclick = () => modal.style.display = 'flex';
+    document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
+    window.onclick = e => { if(e.target === modal) modal.style.display = 'none'; };
+    document.getElementById('sendMessage').onclick = () => {
+      const name = document.getElementById('sellerName').value.trim();
+      const email = document.getElementById('sellerEmail').value.trim();
+      const message = document.getElementById('sellerMessage').value.trim();
+      if (!name || !email || !message) return alert('Please fill in all fields.');
+      const text = `Hello Basto Luxury & Wears,%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+      window.open(`https://wa.me/2349036884569?text=${text}`, '_blank');
+    };
+
+    // Payment + Cloudinary + EmailJS
+    document.getElementById('pay-btn').addEventListener('click', async () => {
+      const name = document.getElementById('customer-name').value.trim();
+      const email = document.getElementById('customer-email').value.trim();
+      const bank = document.getElementById('bank-select').value;
+      const receipt = document.getElementById('receipt-upload').files[0];
+      if(!name || !email){ alert('Please enter your Name and Email.'); return; }
+      if(!bank){ alert('Please select a bank.'); return; }
+      if(!receipt){ alert('Please upload your payment receipt.'); return; }
+
+      try {
+        document.getElementById('receipt-status').innerText = "⏳ Uploading receipt...";
+        const formData = new FormData();
+        formData.append("file", receipt);
+        formData.append("upload_preset", "bastoluxury_upload");
+
+        const cloudRes = await fetch("https://api.cloudinary.com/v1_1/dkzjz5v5k/upload", {method:"POST", body:formData});
+        const cloudData = await cloudRes.json();
+        if(!cloudData.secure_url){ alert("❌ Failed to upload receipt."); return; }
+        const receiptUrl = cloudData.secure_url;
+        document.getElementById('receipt-status').innerHTML = `✅ Receipt uploaded successfully. <a href="${receiptUrl}" target="_blank">View receipt</a>`;
+
+        await emailjs.send("service_ks4h5ll", "template_kbihhqj", {
+          customer_name: name,
+          customer_email: email,
+          bank_name: bank,
+          receipt_file: receipt.name,
+          receipt_url: receiptUrl,
+          company_logo_url: "https://i.postimg.cc/fy8CtxHG/logowhite.jpg",
+          to_email: "bastowears@gmail.com"
+        });
+
+        document.querySelector('.payment-glass').style.display = 'none';
+        document.getElementById('order-confirmation').style.display = 'block';
+
+      } catch(err) {
+        console.error(err); alert("❌ Something went wrong. Please try again.");
+      }
+    });
+    
+  </script>
+</body>
+</html>

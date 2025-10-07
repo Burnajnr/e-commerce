@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <!-- Include header component -->
+        <?php include 'components/header.html'; ?>
+    </header>
+
+    <main>
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <h2>Cart Summary</h2>
+                <p id="total-price">Total Price: $0.00</p>
+                <button id="checkout-button">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Include footer component -->
+        <?php include 'components/footer.html'; ?>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // JavaScript to handle cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load cart items and calculate total price
+            loadCartItems();
+        });
+
+        function loadCartItems() {
+            // Example data, replace with actual cart data retrieval logic
+            const cartItems = [
+                { name: 'Product 1', quantity: 1, price: 29.99 },
+                { name: 'Product 2', quantity: 2, price: 19.99 }
+            ];
+
+            const cartItemsContainer = document.getElementById('cart-items');
+            let totalPrice = 0;
+
+            cartItems.forEach(item => {
+                const total = item.quantity * item.price;
+                totalPrice += total;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>$${total.toFixed(2)}</td>
+                    <td><button class="remove-item">Remove</button></td>
+                `;
+                cartItemsContainer.appendChild(row);
+            });
+
+            document.getElementById('total-price').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/profile.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Include header component -->
+        <div id="header-placeholder"></div>
+    </header>
+
+    <main>
+        <section class="profile-container">
+            <h1>User Profile</h1>
+            <div class="profile-info">
+                <img src="path/to/profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="user-details">
+                    <h2 id="user-name">John Doe</h2>
+                    <p id="user-email">johndoe@example.com</p>
+                    <button id="edit-profile-btn">Edit Profile</button>
+                </div>
+            </div>
+            <div class="order-history">
+                <h3>Order History</h3>
+                <ul id="order-list">
+                    <li>Order #12345 - $99.99 - Delivered</li>
+                    <li>Order #12346 - $49.99 - In Transit</li>
+                    <li>Order #12347 - $29.99 - Delivered</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Include footer component -->
+        <div id="footer-placeholder"></div>
+    </footer>
+
+    <script>
+        // Load header and footer components
+        document.getElementById('header-placeholder').innerHTML = '<!-- Header HTML content goes here -->';
+        document.getElementById('footer-placeholder').innerHTML = '<!-- Footer HTML content goes here -->';
+    </script>
+</body>
+</html>

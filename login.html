@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Basto Luxury & Wears</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <link rel="stylesheet" href="Style/main.css">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER REUSE */
+    header {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    /* LOGIN SECTION */
+    .login-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      background: linear-gradient(180deg, #ffffff, #f7f7f7);
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 40px 35px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .login-card img {
+      display: block;
+      width: 130px;
+      margin: 0 auto 20px auto;
+    }
+
+    .login-card h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .login-card label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .login-card input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      margin-bottom: 15px;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+
+    .login-card input:focus {
+      border-color: #f68b1e;
+    }
+
+    .login-card .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .login-card .actions label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .login-card a {
+      color: #f68b1e;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .login-card a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-primary {
+      background-color: #f68b1e;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #e67b15;
+    }
+
+    .social-login {
+      text-align: center;
+      margin: 20px 0;
+      color: #888;
+      font-size: 13px;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-buttons button {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .social-buttons button:hover {
+      background: #f8f8f8;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      display: none;
+      margin: 10px auto;
+      width: 25px;
+      height: 25px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #f68b1e;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {transform: rotate(0);}
+      100% {transform: rotate(360deg);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* FOOTER SMALLER */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #f68b1e;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER (Your existing one can remain as is) -->
+  <header class="container" id="header">
+    <div class="header_top">
+      <div class="header_social">
+        <a href="https://www.instagram.com/sa__fashionstyle/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.facebook.com/people/SA_Fashionstyle/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://wa.me/201007738790" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
+      </div>
+      <img src="images/logowhite.png" alt="Basto Logo" id="logo">
+    </div>
+  </header>
+
+  <!-- LOGIN SECTION -->
+  <section class="login-section">
+    <div class="login-card">
+      <img src="images/logowhite.png" alt="Basto Luxury & Wears">
+      <h2>Sign In to Your Account</h2>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <div class="actions">
+        <label><input type="checkbox" id="remember"> Remember me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button id="btn-login" class="btn-primary">Sign In</button>
+      <div class="spinner" id="spinner"></div>
+
+      <div class="social-login">Or continue with</div>
+      <div class="social-buttons">
+        <button><ion-icon name="logo-google"></ion-icon> Google</button>
+        <button><ion-icon name="logo-facebook"></ion-icon> Facebook</button>
+      </div>
+
+      <div class="login-footer">
+        New customer? <a href="signup.html">Create an account</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Basto Luxury & Wears. Made with <ion-icon name="heart"></ion-icon> by Khenny Graphics
+  </footer>
+
+  <!-- FIREBASE AUTH -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB8Y0W5SHkhri0JbP5EQc0E65muWmK6dc4",
+      authDomain: "basto-luxury-and-wears.firebaseapp.com",
+      projectId: "basto-luxury-and-wears",
+      storageBucket: "basto-luxury-and-wears.appspot.com",
+      messagingSenderId: "695207049669",
+      appId: "1:695207049669:web:29dd6aac24eb1c987d73ac",
+      measurementId: "G-75P1KL42F4"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginButton = document.getElementById("btn-login");
+    const spinner = document.getElementById("spinner");
+
+    loginButton.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      loginButton.disabled = true;
+      spinner.style.display = "block";
+
+      try {
+        const userCred = await signInWithEmailAndPassword(auth, email, password);
+        localStorage.setItem("user_email", userCred.user.email);
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 800);
+      } catch (err) {
+        alert("Login failed: " + (err.code || err.message));
+      } finally {
+        loginButton.disabled = false;
+        spinner.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+[
+    {
+        "id": 1,
+        "name": "Mangani footwear",
+        "price": "$225.00",
+        "images": [
+            "images/Accessories/foot1.webp"
+        ],
+        "category": "Accessories",
+        "description": "Stylish, comfortable, and built to last — step up your look with every stride."
+    },
+    {
+        "id": 2,
+        "name": "Givenchy FootWear",
+        "price": "$22.00",
+        "images": [
+            "images/Accessories/foot2.jpeg",
+            "images/Accessories/foot2.jpeg",
+            "images/Accessories/foot2.jpeg"
+        ],
+        "category": "Accessories",
+        "isTrending":true,
+        "description": "Luxury, elegance, and unmatched comfort — walk in style wherever you go."
+    },
+    {
+        "id": 3,
+        "name": "Valentino FootWear",
+        "price": "$77.00",
+        "images": [
+            "images/Accessories/foot3.jpeg"
+        ],
+        "category": "Accessories",
+        "description": "Timeless sophistication meets modern style — step out with confidence and luxury."
+    },
+    {
+        "id": 4,
+        "name": "Gucci Footwear",
+        "price": "$128.00",
+        "images": [
+            "images/Accessories/foot4.jpeg"
+        ],
+        "category": "Accessories",
+        "description": "Refined elegance with impeccable craftsmanship."
+    },
+    {
+        "id": 5,
+        "name": "Plain purple top",
+        "price": "$22.00",
+        "images": [
+            "images/woman/3.jpeg",
+            "images/woman/3.jpeg",
+            "images/woman/3.jpeg"
+        ],
+        "category": "Woman",
+        "isTrending": true,
+        "description": "Casual and trendy with vibrant, eye-catching colors."
+    },
+    {
+        "id": 6,
+        "name": "Luofo Footwear",
+        "price": "$85.00",
+        "images": [
+            "images/Accessories/foot5.jpeg",
+            "images/Accessories/foot5,jpeg"
+        ],
+        "category": "Accessories",
+        "description": "Iconic glamour and signature luxury details."
+    },
+    {
+        "id": 7,
+        "name": "Italia shirt",
+        "price": "$100.00",
+        "images": [
+            "images/woman/4.jpeg",
+            "images/woman/4.jpeg",
+            "images/woman/4.jpeg"
+        ],
+        "category": "Woman",
+        "isTrending": true,
+        "description": "Modern and edgy with subtle cut-out accents for flair."
+    },
+    {
+        "id": 8,
+        "name": "Jersey",
+        "price": "$82.00 - $89.00",
+        "images": [
+            "images/woman/5.jpeg",
+            "images/woman/5.jpeg",
+            "images/woman/5.jpeg"
+        ],
+        "category": "Woman",
+        "isTrending": true,
+        "description": "Simona Ribbed Cardigan is perfect for layering. Its ribbed texture and versatile design make it a must-have for any season."
+    },
+        
+    {
+        "id": 11,
+        "name": "Versace Footwear",
+        "price": "$54.00",
+        "images": [
+            "images/Accessories/foot6.jpeg"
+        ],
+        "category": "Accessories",
+        "description": "Avant-garde design for trendsetters.Avant-garde design for trendsetters."
+    },
+    {
+        "id": 12,
+        "name": "Coach Footwear",
+        "price": "$86.00",
+        "images": [
+            "images/Accessories/foot7.jpeg"
+        ],
+        "category": "Accessories",
+        "description": "Cat-Eye Glasses 20257 feature a classic design with a modern twist. Perfect for adding a sophisticated touch to any look."
+    },
+    {
+        "id": 15,
+        "name": "Oversized T-shirt Multi-colors",
+        "price": "$188.00",
+        "images": [
+            "images/woman/6.jpeg"
+        ],
+        "category": "Woman",
+        "description": "The  Dress In red is a versatile piece that can be dressed up or down. Made from soft, comfortable material."
+    },
+    {
+        "id": 16,
+        "name": "black and white T-shirt",
+        "price": "$48.00",
+        "images": [
+            "images/woman/7.jpeg",
+            "images/woman/7.jpeg"
+        ],
+        "category": "Woman",
+        "description": "This shirt is perfect for keeping you in style. Made from soft, stretchy fabric for a comfortable fit."
+    },
+    {
+        
+        "id": 19,
+            "name": "long jean",
+            "price": "$198.00",
+            "images": [
+                "images/man/5.jpeg",
+                "images/man/5.jpeg"
+            ],
+            "category": "Man",
+            "description": ""
+    },
+    {
+        "id": 20,
+            "name": "rugged jean",
+            "price": "$266.00",
+            "images": [
+                "images/man/7.jpeg",
+                "images/man/7.jpeg"
+            ],
+            "category": "Man",
+            "isTrending": true,
+            "description": "A rugged stone-colored hooded jacket that offers weather resistance and modern styling — great for layering."
+    },
+    {
+        "id": 21,
+        "name": "Slim Formal Shirt In White",
+        "price": "$198.00",
+        "images": [
+            "images/woman/slim-formal-shirt-in-white_01.webp",
+            "images/woman/slim-formal-shirt-in-white_03.webp"
+        ],
+        "category": "Woman",
+        "description": "The Slim Formal Shirt In White is perfect for formal occasions. Made from high-quality fabric for a sharp, professional look."
+    },
+    {
+        "id": 22,
+        "name": "denim jeans",
+        "price": "$106.00",
+        "images": [
+            "images/man/1.jpeg",
+            "images/man/tapered-pants-in-camel-_04.webp"
+        ],
+        "category": "Man",
+        "description": "Classic denim jeans with a modern fit — versatile and durable for everyday wear."
+    },
+    {
+        "id": 23,
+        "name": "Louis vuiton jeans",
+        "price": "$52.00",
+        "images": [
+            "images/man/2.jpeg"
+        ],
+        "category": "Man",
+        "description": ""
+    },
+    {
+        "id": 24,
+        "name": "jeans",
+        "price": "$35.00",
+        "images": [
+            "images/man/3.jpeg",
+            "images/man/3.jpeg"
+        ],
+        "category": "Man",
+        "description": "A trendy color-block jean that adds a pop of style ."
+    },
+    {
+        "id": 25,
+        "name": "stone jean",
+        "price": "$52.00",
+        "images": [
+            "images/man/4.jpeg",
+            "images/man/4.jpeg"
+        ],
+        "category": "Man",
+        "description": "Durable stone-colored jeans with a relaxed fit — perfect for casual, everyday wear."
+    },
+    {
+        "id": 26,
+        "name": "G-shock classic watch",
+        "price": "$71.00",
+        "images": [
+            "images/Jewelry/1.jpeg",
+            "images/Jewelry/1.jpeg"
+        ],
+        "category": "Jewelry",
+        "isTrending":true,
+        "description": " Rugged, reliable, and iconic timepieces built to withstand anything."
+    },
+    {
+        "id": 27,
+        "name": "G-shock mudmaster watch",
+        "price": "$198.00",
+        "images": [
+            "images/Jewelry/4.jpeg",
+            "images/Jewelry/4.jpeg"
+        ],
+        "category": "Jewelry",
+        "description": "Built for rugged environments, resistant to mud and dust."
+    },
+    {
+        "id": 28,
+        "name": "G-Shock DW-5600E-1V Watch",
+        "price": "$71.00",
+        "images": [
+            "images/Jewelry/3.jpeg",
+            "images/Jewelry/3.jpeg"
+        ],
+        "category": "Jewelry",
+        "description": "Iconic square face, shock-resistant, and reliable."
+    },
+    {
+        "id": 29,
+        "name": "G-Shock G-Steel",
+        "price": "$106.00",
+        "images": [
+            "images/Jewelry/5.jpeg",
+            "images/Jewelry/5.jpeg"
+        ],
+        "category": "Jewelry",
+        "description": "Premium metal and resin hybrid for style and toughness."
+    },
+    {
+        "id": 30,
+        "name": "G-Shock GA-2100",
+        "price": "$166.00",
+        "images": [
+            "images/Jewelry/2.jpeg"
+        ],
+        "category": "Jewelry",
+        "description": "Sleek carbon-core design with robust shock protection."
+    },
+    {
+        "id": 31,
+        "name": "G-Shock GA-700",
+        "price": "$195.00",
+        "images": [
+            "images/Jewelry/6.jpeg",
+            "images/Jewelry/6.jpeg"
+        ],
+        "category": "Jewelry",
+        "description": "Bold, large case with multi-function digital display."
+    },
+    {
+        "id": 32,
+        "name": "G-Shock Frogman",
+        "price": "$86.00",
+        "images": [
+            "images/Jewelry/7.jpeg"
+        ],
+        "category": "Jewelry",
+        "description": "Professional dive watch with unmatched water resistance."
+    },
+    {
+        "id": 33,
+        "name": "minimalist Jersey",
+        "price": "$199.00",
+        "images": [
+            "images/woman/1.jpeg",
+            "images/woman/2.jpeg",
+            "images/woman/2.jpeg"
+        ],
+        "isTrending":true,
+        "category": "Woman",
+        "description": "Elegant wrap design with a flattering silhouette for any occasion."
+    }
+]
