@@ -1,0 +1,351 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+}
+.checkout{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkout-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8%;
+}
+.checkout-container h4{
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 14px 0;
+    text-align: center;
+}
+.checkout-container div span{
+    font-size: 16px;
+    color: #727272;
+    text-transform: capitalize;
+}
+#id_order,
+#total_price,
+#order_date{
+    color: #000;
+}
+#back_btn{
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    font-family: 400;
+    text-transform: capitalize;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 4px;
+    margin: 20px 0;
+    height: 48px;
+    transition: .25s ease-in-out !important;
+    cursor: pointer;
+}
+#back_btn:hover{
+    background-color: #097a6e;
+}
+.checkout-container {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  padding: 2.5em 2em;
+  margin: auto;
+  max-width: 400px;
+  text-align: center;
+  color: #222;
+}
+#custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 32px; height: 32px;
+  background: rgba(9,122,110,0.15);
+  border: 2px solid #097a6e;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s, border 0.2s, transform 0.1s;
+}
+/* Glassmorphism Payment Section */
+.payment-glass {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px rgba(9,122,110,0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  padding: 2em 2em 2.5em 2em;
+  margin: 2em auto;
+  max-width: 400px;
+  text-align: center;
+  color: #222;
+  animation: fadeInGlass 0.25s cubic-bezier(.17,.67,.83,.67);
+}
+@keyframes fadeInGlass {
+  from { opacity: 0; transform: scale(0.95) translateY(40px);}
+  to { opacity: 1; transform: scale(1) translateY(0);}
+}
+.payment-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin-bottom: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 0.7em 1em;
+  transition: background 0.2s;
+}
+.payment-options label:hover, .payment-options input:checked + .icon {
+  background: rgba(9,122,110,0.08);
+}
+.payment-options .icon {
+  font-size: 1.5em;
+  color: #097a6e;
+  transition: color 0.2s;
+}
+.payment-details input {
+  display: block;
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.7em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 2px 8px rgba(9,122,110,0.08);
+  transition: border 0.2s;
+}
+.payment-details input:focus {
+  border: 1.5px solid #097a6e;
+  outline: none;
+}
+.glass-btn {
+  margin-top: 1.5em;
+  padding: 0.8em 2em;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(90deg, #097a6e 0%, #ff00cc 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+  box-shadow: 0 4px 24px #097a6e44;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.glass-btn:hover {
+  background: linear-gradient(90deg, #ff00cc 0%, #097a6e 100%);
+  box-shadow: 0 8px 32px #ff00cc44;
+  transform: scale(1.05);
+}
+/* Bank Transfer Section - Glassmorphism & Modern Effects */
+#bank-details {
+  background: rgba(255,255,255,0.22);
+  box-shadow: 0 4px 24px rgba(9,122,110,0.13);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  padding: 1.5em 1em 1em 1em;
+  margin-top: 1.5em;
+  animation: fadeInGlass 0.25s cubic-bezier(.17,.67,.83,.67);
+  color: #222;
+  text-align: left;
+}
+
+#bank-details h4 {
+  margin-bottom: 0.7em;
+  font-size: 1.1em;
+  color: #097a6e;
+  font-weight: 600;
+}
+
+#bank-select {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 10px;
+  border: 1.5px solid #097a6e;
+  background: rgba(255,255,255,0.35);
+  font-size: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 8px rgba(9,122,110,0.08);
+  transition: border 0.2s;
+}
+
+#bank-select:focus {
+  border: 2px solid #ff00cc;
+  outline: none;
+}
+
+#bank-details p {
+  font-size: 0.98em;
+  color: #444;
+  margin-top: 0.5em;
+  background: rgba(9,122,110,0.07);
+  border-radius: 8px;
+  padding: 0.7em;
+  box-shadow: 0 1px 6px rgba(9,122,110,0.06);
+}
+
+@keyframes fadeInGlass {
+  from { opacity: 0; transform: scale(0.97) translateY(30px);}
+  to { opacity: 1; transform: scale(1) translateY(0);}
+}
+.order-confirmation-glass {
+  background: rgba(255,255,255,0.22);
+  box-shadow: 0 8px 32px rgba(9,122,110,0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  padding: 2em 2em 2.5em 2em;
+  margin: 2em auto;
+  max-width: 400px;
+  text-align: center;
+  color: #222;
+  animation: fadeInGlass 0.25s cubic-bezier(.17,.67,.83,.67);
+}
+.order-confirmation-glass h2 {
+  color: #097a6e;
+  margin-bottom: 0.5em;
+}
+.order-confirmation-glass p {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 1em;
+}
+.receipt-label {
+  display: block;
+  margin-top: 1em;
+  font-weight: 500;
+  color: #097a6e;
+}
+#receipt-upload {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.25);
+}
+#receipt-status {
+  display: block;
+  margin-top: 0.5em;
+  color: #00cc66;
+  font-size: 0.98em;
+}
+.glass-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.22);
+  box-shadow: 0 8px 32px rgba(9,122,110,0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  padding: 2em;
+  z-index: 9999;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+.glass-modal textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 12px;
+  border: 1px solid #097a6e;
+  margin-bottom: 1em;
+  padding: 0.7em;
+  font-size: 1em;
+  background: rgba(255,255,255,0.25);
+}
+/* Contact Seller Modal */
+#contact-modal {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 32px rgba(9, 122, 110, 0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  padding: 2em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 90%;
+  max-width: 400px;
+  color: #222;
+  animation: fadeInGlass 0.25s ease-out;
+}
+
+/* Modal Heading */
+#contact-modal h3 {
+  color: #cba6f7;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+
+/* Contact Form Inputs */
+#contact-modal input[type="text"],
+#contact-modal input[type="email"],
+#contact-modal textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #097a6e;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 1em;
+  color: #000;
+  transition: border 0.2s ease-in-out;
+}
+
+#contact-modal input:focus,
+#contact-modal textarea:focus {
+  outline: none;
+  border: 2px solid #ff00cc;
+}
+
+/* Button inside the modal */
+#contact-modal .glass-btn {
+  background: linear-gradient(90deg, #097a6e 0%, #ff00cc 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1.05em;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#contact-modal .glass-btn:hover {
+  background: linear-gradient(90deg, #ff00cc 0%, #097a6e 100%);
+  transform: scale(1.05);
+}
+
+/* Optional Close Button (if needed) */
+#contact-modal .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5em;
+  color: #ff00cc;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 500px) {
+  #contact-modal {
+    width: 95%;
+    padding: 1.5em;
+  }
+}
+  
